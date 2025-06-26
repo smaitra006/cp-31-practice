@@ -1,12 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
+#define ll long long
+#define vi vector<int>
+#define vll vector<long long>
+#define pii pair<int, int>
+#define pb push_back
+#define mp make_pair
+#define F first
+#define S second
+#define all(x) (x).begin(), (x).end()
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin >> t;
+    while (t--)
+    {
       int n;
       cin >> n;
       string s;
@@ -30,6 +42,7 @@ int main()
         cout << 2 << endl;
       else
         cout << total_count_of_empty_cells << endl;
-  }
+    }
+
   return 0;
 }
