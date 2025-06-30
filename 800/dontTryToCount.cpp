@@ -15,7 +15,7 @@ bool check(string s, string x) {
     if(x.size() < s.size()) {
         return false;
     }
-    for(int i = 0; i < x.size() - s.size(); i++) {
+    for(int i = 0; i <= x.size() - s.size(); i++) {
         if(x.substr(i, s.size()) == s) {
             return true;
         }
