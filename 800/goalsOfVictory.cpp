@@ -20,29 +20,13 @@ int main() {
     while(t--) {
         ll n;
         cin >> n;
-
-        vll v(n);
-
-        for(int i = 0; i < n; i++) {
-            cin >> v[i];
+        ll sum = 0;
+        for(int i = 0; i < n - 1; ++i) {
+            ll x;
+            cin >> x;
+            sum += x;
         }
-
-        ll negSum = 0;
-        ll posSum = 0;
-
-        for(int i = 0; i < n; i++) {
-            if(v[i] > 0) {
-                posSum += v[i];
-            }
-            else {
-                negSum += v[i];
-            }
-        }
-
-        negSum = -(negSum);
-        posSum = -(posSum);
-
-        cout << (posSum + negSum) << endl;
+        cout << -sum << '\n';
     }
 
     return 0;
