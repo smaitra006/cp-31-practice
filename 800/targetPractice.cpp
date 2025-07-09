@@ -11,10 +11,7 @@ using namespace std;
 #define S second
 #define all(x) (x).begin(), (x).end()
 
-<<<<<<< HEAD
-=======
-const int score[10][10] = {
-    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+const int score[10][10] = { {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
     {1, 2, 2, 2, 2, 2, 2, 2, 2, 1},
     {1, 2, 3, 3, 3, 3, 3, 3, 2, 1},
     {1, 2, 3, 4, 4, 4, 4, 3, 2, 1},
@@ -23,16 +20,12 @@ const int score[10][10] = {
     {1, 2, 3, 4, 4, 4, 4, 3, 2, 1},
     {1, 2, 3, 3, 3, 3, 3, 3, 2, 1},
     {1, 2, 2, 2, 2, 2, 2, 2, 2, 1},
-    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
-
->>>>>>> 382f229d9c45bcef5118621ecc2f45ba5a4066ac
-int main() {
+    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+};
+int main()
+{
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-
-<<<<<<< HEAD
-    
-=======
     int t; // Number of test cases
     cin >> t;
     while (t--)
@@ -62,7 +55,6 @@ int main() {
         }
         cout << total_score << endl; // Output the total score for the current test case
     }
->>>>>>> 382f229d9c45bcef5118621ecc2f45ba5a4066ac
 
     return 0;
 }
