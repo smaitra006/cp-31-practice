@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+using ull = unsigned long long;
 using ll = long long;
 using vi = vector<int>;
 using vll = vector<ll>;
@@ -18,12 +19,13 @@ int main() {
     cin >> t;
 
     while(t--) {
-        ll n;
+        ull n;
         cin >> n;
-        ll ans;
-        for(ll i = 1; ; i++) {
+        ull ans;
+        for(ull i = 1; ; i++) {
             if(n % i != 0) {
                 ans = i - 1;
+                break;
             }
         }
         cout << ans << endl;
