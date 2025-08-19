@@ -18,26 +18,16 @@ int lcm(int a, int b) { return a / gcd(a, b) * b; }
 
 void solve() {
     // Your logic here
-    int n;
-    cin >> n;
-    vi v(n);
-
-    for (int i = 0; i < n; i++) {
-        cin >> v[i];
+    int n, k;
+    cin >> n >> k;
+    if(n % k != 0) {
+        cout << 1 << endl;
+        cout << n << endl;
     }
-
-    int l = 0, k = 0, op = 0;
-    for (int i = 0; i < n; i++) {
-        if (v[i] == 1) l++;
-        else k++;
+    else {
+        cout << 2 << endl;
+        cout << n - 1 << " " << 1 << endl;
     }
-
-    while (l < k || k % 2 != 0) {
-        l++;
-        k--;
-        op++;
-    }
-    cout << op << endl;
 }
 
 int32_t main() {
