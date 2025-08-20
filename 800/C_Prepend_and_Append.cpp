@@ -20,26 +20,17 @@ void solve() {
     // Your logic here
     int n;
     cin >> n;
-    vi v(n);
-    int totalXOR = 0;
-    for (int i = 0; i < n; i++) {
-        cin >> v[i];
-    }
-
-    for (int i = 0; i < n; i++) {
-        totalXOR ^= v[i];
-    }
-
-    if (n % 2 == 1) {
-        cout << totalXOR << endl;
-    }
-    else {
-        if (totalXOR == 0) {
-            cout << totalXOR << endl;
+    string s;
+    cin >> s;
+    int l = 0, r = n - 1;
+    while(l <= r) {
+        if(s[l] == s[r]) {
+            break;
         }
-        else
-            cout << -1 << endl;
+        l++;
+        r--;
     }
+    cout << r - l + 1 << endl;
 }
 
 int32_t main() {

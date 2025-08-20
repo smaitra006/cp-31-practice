@@ -1,60 +1,48 @@
+// Competitive Programming Template (C++)
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-#define vi vector<int>
-#define vll vector<long long>
-#define pii pair<int, int>
+#define int long long
 #define pb push_back
-#define mp make_pair
-#define F first
-#define S second
-#define all(x) (x).begin(), (x).end()
+#define all(v) v.begin(), v.end()
+#define endl '\n'
+#define fast_io ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+const int MOD = 1e9+7;
+const int INF = 1e18;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
 
-    int t;
-    cin >> t; // Read the number of test cases
-    while (t--)
-    {
-        int source_x, source_y, destination_x, destination_y;
-        cin >> source_x >> source_y >> destination_x >> destination_y;
+int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int lcm(int a, int b) { return a / gcd(a, b) * b; }
 
-        // Step 1
-        // If the destination y is below the source y,
-        // it is impossible to reach the destination.
-        if (destination_y < source_y) // Check if destination y is below source y
-        {
-            cout << -1 << endl; // Output -1 indicating it's impossible
-            continue;           // Move to the next test case
-        }
-
-        // Step 2
-        // Calculate the minimum number of moves required to match the y-coordinate
-        // using operation type 1 (Move Up and Right).
-        int moves = destination_y - source_y; // Calculate moves needed to match y-coordinate
-
-        // Step 3
-        // Adjust the source x-coordinate by the number of moves
-        // since moving up and right also increases x.
-        source_x += moves; // Update source x after moving up and right
-
-        // Step 4
-        // If the destination x is to the right of the updated source x,
-        // it is impossible to reach the destination.
-        if (source_x < destination_x) // Check if destination x is to the right
-        {
-            cout << -1 << endl; // Output -1 indicating it's impossible
-            continue;           // Move to the next test case
-        }
-
-        // If the destination x is to the left of the updated source x,
-        // calculate the additional moves required using operation type 2 (Move Left).
-        moves += (source_x - destination_x); // Add moves needed to match x-coordinate
-        cout << moves << endl;               // Output the total number of moves
+void solve() {
+    // Your logic here
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    int ans = 0;
+    if(d < b) {
+        cout << -1 << endl;
+        return;
     }
+    else {
+        ans += abs(d - b);
+        a += abs(d - b);
+        if(a < c) {
+            cout << -1 << endl;
+            return;
+        }
+        else {
+            ans += abs(c - a);
+        }
+    }
+    cout << ans << endl;
+}
 
+int32_t main() {
+    fast_io
+    int t = 1;
+    cin >> t; // Uncomment if multiple test cases
+    while(t--) solve();
     return 0;
 }
