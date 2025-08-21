@@ -1,54 +1,49 @@
+// Competitive Programming Template (C++)
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-#define vi vector<int>
-#define vll vector<long long>
-#define pii pair<int, int>
+#define int long long
 #define pb push_back
-#define mp make_pair
-#define F first
-#define S second
-#define all(x) (x).begin(), (x).end()
+#define all(v) v.begin(), v.end()
+#define endl '\n'
+#define fast_io ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+const int MOD = 1e9+7;
+const int INF = 1e18;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-        vector<int> a(n);
-        int total2s = 0;
-        for (int i = 0; i < n; i++)
-        {
-            cin >> a[i];
-            if (a[i] == 2)
-                total2s++;
-        }
+int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int lcm(int a, int b) { return a / gcd(a, b) * b; }
 
-        int left2s = 0;
-        bool found = false;
-        for (int k = 1; k < n; k++)
-        {
-            if (a[k - 1] == 2)
-                left2s++;
-            int right2s = total2s - left2s;
-            if (left2s == right2s)
-            {
-                cout << k << "\n";
-                found = true;
+void solve() {
+    // Your logic here
+    int n;
+    cin >> n;
+    vi a(n);
+    int two_cnt = 0;
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+        if(a[i] == 2) two_cnt++;
+    }
+    if(two_cnt % 2) cout << -1 << endl;
+    else {
+        int cnt = 0;
+        int i;
+        for(i = 0; i < n; i++) {
+            if(a[i] == 2) cnt++;
+            if(cnt == two_cnt / 2) {
                 break;
             }
         }
-
-        if (!found)
-            cout << "-1\n";
+        cout << i + 1 << endl;
     }
+}
 
+int32_t main() {
+    fast_io
+    int t = 1;
+    cin >> t; // Uncomment if multiple test cases
+    while(t--) solve();
     return 0;
 }
