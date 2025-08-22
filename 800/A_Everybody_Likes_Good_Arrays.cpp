@@ -1,39 +1,40 @@
+// Competitive Programming Template (C++)
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-#define vi vector<int>
-#define vll vector<long long>
-#define pii pair<int, int>
+#define int long long
 #define pb push_back
-#define mp make_pair
-#define F first
-#define S second
-#define all(x) (x).begin(), (x).end()
+#define all(v) v.begin(), v.end()
+#define endl '\n'
+#define fast_io ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+const int MOD = 1e9+7;
+const int INF = 1e18;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        long long n;
-        cin >> n;
-        long long a[n];
-        for (long long i = 0; i < n; i++)
-            cin >> a[i];
+int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int lcm(int a, int b) { return a / gcd(a, b) * b; }
 
-        long long operations_count = 0;
-
-        for (long long i = 0; i < n - 1; i++)
-        {
-            if ((a[i] % 2) == (a[i + 1] % 2))
-                operations_count++;
-        }
-        cout << operations_count << endl;
+void solve() {
+    // Your logic here
+    int n;
+    cin >> n;
+    vi a(n);
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
     }
+    int ops = 0;
+    for(int i = 0; i < n - 1; i++) {
+        if((a[i] % 2) == (a[i + 1] % 2)) ops++;
+    }
+    cout << ops << endl;
+}
 
+int32_t main() {
+    fast_io
+    int t = 1;
+    cin >> t; // Uncomment if multiple test cases
+    while(t--) solve();
     return 0;
 }

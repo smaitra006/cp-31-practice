@@ -1,44 +1,49 @@
+// Competitive Programming Template (C++)
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-#define vi vector<int>
-#define vll vector<long long>
-#define pii pair<int, int>
+#define int long long
 #define pb push_back
-#define mp make_pair
-#define F first
-#define S second
-#define all(x) (x).begin(), (x).end()
+#define all(v) v.begin(), v.end()
+#define endl '\n'
+#define fast_io ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+const int MOD = 1e9+7;
+const int INF = 1e18;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
 
-    int t;
-    cin >> t;
-    while(t--) {
-        int n, k;
-        cin >> n >> k;
-        string s;
-        cin >> s;
-        unordered_map<char, int> freq;
-        for(int i = 0; i < n; i++) {
-            freq[s[i]]++;
-        }
-        int odd = 0;
-        for(auto it : freq) {
-            if(it.second % 2 == 1) {
-                odd++;
-            }
-        }
-        if(k > odd || odd - 1 == k || odd == k) {
-            cout << "YES" << endl;
-        }
-        else {
-            cout << "NO" << endl;
+int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int lcm(int a, int b) { return a / gcd(a, b) * b; }
+
+void solve() {
+    // Your logic here
+    int n, k;
+    cin >> n >> k;
+    string s;
+    cin >> s;
+    unordered_map<char, int> freq;
+    for (int i = 0; i < n; i++) {
+        freq[s[i]]++;
+    }
+    int odd = 0;
+    for (auto it : freq) {
+        if (it.second % 2 == 1) {
+            odd++;
         }
     }
+    if (k > odd || odd - 1 == k || odd == k) {
+        cout << "YES" << endl;
+    }
+    else {
+        cout << "NO" << endl;
+    }
+}
 
+int32_t main() {
+    fast_io
+    int t = 1;
+    cin >> t; // Uncomment if multiple test cases
+    while(t--) solve();
     return 0;
 }
